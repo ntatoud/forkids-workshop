@@ -1,6 +1,6 @@
 import kaplay from "kaplay";
 
 export default kaplay({
-  width: 800,
-  height: 800,
+  scale: 4,
+  background: [0, 0, 0],
 });
