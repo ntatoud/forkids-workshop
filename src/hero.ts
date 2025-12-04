@@ -8,6 +8,23 @@ k.loadSpriteAtlas("sprites/0x72_DungeonTilesetII_v1.7.png", {
     width: 144,
     height: 28,
     sliceX: 9,
+    anims: {
+      // When the hero is not moving
+      idle: {
+        from: 0,
+        to: 3,
+        speed: 3,
+        loop: true,
+      },
+      // When the hero is moving
+      run: {
+        from: 4,
+        to: 7,
+        speed: 10,
+        loop: true,
+      },
+      hit: 8,
+    },
   },
 });
 
@@ -38,4 +55,29 @@ onKeyDown("up", () => {
 
 onKeyDown("down", () => {
   hero.move(dirs.down.scale(SPEED));
+});
+
+// Update animations when moving
+["left", "right", "up", "down"].forEach((key) => {
+  onKeyPress(key, () => {
+    hero.play("run");
+
+    // Flip the sprite when moving left/right
+    if (key === "left") {
+      hero.flipX = true;
+    }
+    if (key === "right") {
+      hero.flipX = false;
+    }
+  });
+  onKeyRelease(key, () => {
+    if (
+      !isKeyDown("left") &&
+      !isKeyDown("right") &&
+      !isKeyDown("up") &&
+      !isKeyDown("down")
+    ) {
+      hero.play("idle");
+    }
+  });
 });

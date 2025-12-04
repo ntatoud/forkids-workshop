@@ -1,6 +1,15 @@
+- [x] Prepare the game instance (tiles)
 - [x] Display character on the screen
+  - [x] Load character's sprite
+  - [x] Add Character in the middle of the "scene"
 - [x] Move character
+  - [x] Define moving directions
+  - [x] Add keyboard event listener for each direction
+- [ ] Add moving animation
+  - [x] Load animations
+  - [x] Add event listeners to play/stop/update animations on move.
+  - [x] Flip the sprite to run in the proper left/right direction
 - [ ] Navigating the sprite to add animations
-- [] Display obstacles
-- [] Add collisions
-- [] Interactive objects ?
+- [ ] Display obstacles
+- [ ] Add collisions
+- [ ] Interactive objects ?
