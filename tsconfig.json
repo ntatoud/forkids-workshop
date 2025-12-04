@@ -18,5 +18,5 @@
     },
     "types": ["./node_modules/kaplay/dist/declaration/global.d.ts"]
   },
-  "include": ["src"]
+  "include": ["src", "public/assets"]
 }
