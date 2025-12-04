@@ -1,3 +1,3 @@
-import k from "@/kaplay";
+import "@/hero";
 
 loadRoot("./"); // A good idea for Itch.io publishing later
