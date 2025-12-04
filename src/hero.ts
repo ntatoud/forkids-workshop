@@ -12,4 +12,30 @@ k.loadSpriteAtlas("sprites/0x72_DungeonTilesetII_v1.7.png", {
 });
 
 // Display the hero
-k.add([k.sprite("hero"), k.scale(3)]);
+const hero = k.add([k.sprite("hero"), k.scale(3), k.pos()]);
+
+// Handle movements
+const SPEED = 200;
+
+const dirs = {
+  left: LEFT,
+  right: RIGHT,
+  up: UP,
+  down: DOWN,
+};
+
+onKeyDown("right", () => {
+  hero.move(dirs.right.scale(SPEED));
+});
+
+onKeyDown("left", () => {
+  hero.move(dirs.left.scale(SPEED));
+});
+
+onKeyDown("up", () => {
+  hero.move(dirs.up.scale(SPEED));
+});
+
+onKeyDown("down", () => {
+  hero.move(dirs.down.scale(SPEED));
+});
